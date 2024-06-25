@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pusat Bantuan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: lightblue;
+            padding: 10px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 10px;
+            background-color: orange;
+            float: left;
+            height: calc(100vh - 50px); /* Full height minus header */
+            box-sizing: border-box;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        .sidebar ul li ul {
+            list-style-type: none;
+            padding-left: 15px;
+            display: none;
+        }
+        .content {
+            margin-left: 270px;
+            padding: 10px;
+            height: calc(100vh - 50px); /* Full height minus header */
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .search-box {
+            display: flex;
+            align-items: center;
+            border: 2px solid green;
+            padding: 5px;
+            margin-top: 10px;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            flex-grow: 1;
+        }
+        .search-box img {
+            width: 20px;
+            height: 20px;
+        }
+        .highlighted {
+            background-color: yellow;
+            color: black;
+        }
+        .highlighted a {
+            color: black;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">~selamat datang di pusat bantuan penyelesaian web!~</div>
+    <div class="sidebar">
+        <div>pusat bantuan</div>
+        <ul>
+            <li onclick="toggleSubmenu(this)">masalah bug
+                <ul>
+                    <li>@ bug akun</li>
+                    <li>@ bug password</li>
+                    <li>@ bug REcapcha</li>
+                </ul>
+            </li>
+            <li onclick="toggleSubmenu(this)">masalah pada form
+                <ul>
+                    <li>@ tidak bisa mengedit</li>
+                    <li>@ error form</li>
+                    <li>@ soal tidak bisa print</li>
+                </ul>
+            </li>
+            <li onclick="toggleSubmenu(this)">masalah kode error pada halaman web
+                <ul>
+                    <li>@ penyelesaian masalah</li>
+                    <li>@ akun tidak bisa di in</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="search-box">
+            <input type="text" placeholder="cari bantuan">
+            <img src="https://icon-library.com/images/magnifying-glass-icon/magnifying-glass-icon-12.jpg" alt="Search">
+        </div>
+    </div>
+    <div class="content">
+        <!-- Konten pusat bantuan di sini -->
+        <div class="highlighted">
+            <a href="https://example.com">tambahkan informasi bantuan</a>
+        </div>
+    </div>
+    <script>
+        function toggleSubmenu(element) {
+            const submenu = element.querySelector('ul');
+            if (submenu.style.display === 'block') {
+                submenu.style.display = 'none';
+            } else {
+                submenu.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
+
